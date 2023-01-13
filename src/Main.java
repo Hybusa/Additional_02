@@ -2,8 +2,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
+
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
+        task6();
+    }
+
+    public static void task1() {
 
         // First task
 
@@ -13,15 +22,18 @@ public class Main {
         чётным или нечётным. Ноль является нечетным числом.
 */
         System.out.print("Задание 1. \n Введите чило: \n");
-        Scanner myInput1 = new Scanner( System.in );
-        int p1 = myInput1.nextInt();
+        Scanner myInput = new Scanner(System.in);
+        int p = myInput.nextInt();
 
-        if( p1%2 != 0 || p1==0 )
+        if (p % 2 != 0 || p == 0)
             System.out.print("Число нечетное");
         else
             System.out.print("Число четное");
 
         System.out.println(System.lineSeparator());
+
+    }
+    public static void task2() {
 
         // Second task
 /*
@@ -30,20 +42,21 @@ public class Main {
         Например, среди чисел 7.3 и 11.13 ближайшее к десяти 11.13.
 */
         System.out.print("Задание 2. \n Введите 2 числа: \n");
-        Scanner myInput2 = new Scanner( System.in );
+        Scanner myInput = new Scanner(System.in);
 
-        float p2 = myInput2.nextFloat();
+        float p = myInput.nextFloat();
 
-        float d2 = myInput2.nextFloat();
+        float d = myInput.nextFloat();
 
-        if ((10-p2) > (10-d2))
-            System.out.print(p2);
+        if ((10 - p) > (10 - d))
+            System.out.print(p);
         else
-            System.out.print(d2);
+            System.out.print(d);
 
         System.out.println(System.lineSeparator());
 
-
+    }
+    public static void task3() {
         // Third task
 
 /*
@@ -51,18 +64,20 @@ public class Main {
         (его нужно сгенерировать с помощью класса Random) в интервал (22;99) и выводить результат в консоль.
 */
         System.out.println("Задание 3.");
-        int min3 = 3;
-        int max3 = 158;
+        int min = 3;
+        int max = 158;
 
-        int randA3 = (int)(Math.random()*(max3-min3+1)+min3);
-        System.out.println("Рандомное число : " + randA3);
+        int randA = (int) (Math.random() * (max - min + 1) + min);
+        System.out.println("Рандомное число : " + randA);
 
-        if(randA3 < 99 && randA3 >22)
+        if (randA < 99 && randA > 22)
             System.out.println("Число попавло в заданный диапазон.");
         else
             System.out.println("Число не попавло в заданный диапазон.");
 
         System.out.println(System.lineSeparator());
+    }
+    public static void task4() {
 
         //Fourth task
 /*
@@ -71,25 +86,28 @@ public class Main {
         Например, в числа 586 наибольшим членом является 8, т.к. это число больше 5 и больше 6.
  */
         System.out.println("Задание 4.");
-        int min4 = 100;
-        int max4 = 999;
+        int min = 100;
+        int max = 999;
 
-        int randA4 = (int)(Math.random()*(max4-min4+1)+min4);
-        System.out.println("Рандомоное трехзначиное число: " + randA4);
+        int randA = (int) (Math.random() * (max - min + 1) + min);
+        System.out.println("Рандомоное трехзначиное число: " + randA);
 
-        int a4 = randA4/100;
-        int b4 = (randA4%100) / 10;
-        int c4 = randA4%10;
+        int a = randA / 100;
+        int b = (randA % 100) / 10;
+        int c = randA % 10;
 
-        if (a4 > b4 && a4 > c4)
-            System.out.println("Самый большой член числа " + randA4 + " : " + a4);
-        else if (b4 > c4)
-            System.out.println("Самый большой член числа " + randA4 + " : " + b4);
+        if (a > b && a > c)
+            System.out.println("Самый большой член числа " + randA + " : " + a);
+        else if (b > c)
+            System.out.println("Самый большой член числа " + randA + " : " + b);
         else
-            System.out.println("Самый большой член числа " + randA4 + " : " + c4);
+            System.out.println("Самый большой член числа " + randA + " : " + c);
 
         System.out.println(System.lineSeparator());
 
+    }
+
+    public static void task5() {
         //Fifth task
 /*
         Даны три переменные a, b и c, которые содержат целочисленные значение и не равны между собой.
@@ -100,21 +118,23 @@ public class Main {
 
         System.out.println("Задание 5.");
 
-        Random random=new Random();
-        int a5 = (random.nextInt(65536)-32768);
-        int b5 = (random.nextInt(65536)-32768);
-        int c5 = (random.nextInt(65536)-32768);
+        Random random = new Random();
+        int a = (random.nextInt(65536) - 32768);
+        int b = (random.nextInt(65536) - 32768);
+        int c = (random.nextInt(65536) - 32768);
 
-        int[] numb5 = {a5,b5,c5};
+        int[] numb = {a, b, c};
 
-        System.out.println("Числа: " + Arrays.toString(numb5));
+        System.out.println("Числа: " + Arrays.toString(numb));
 
-        Arrays.sort(numb5);
+        Arrays.sort(numb);
 
-        System.out.println("В порядке возростания: " + Arrays.toString(numb5));
+        System.out.println("В порядке возростания: " + Arrays.toString(numb));
 
         System.out.println(System.lineSeparator());
+    }
 
+    public static void task6() {
         //Sixth task
 /*
         На одном предприятии инженер Иванов придумал и сделал устройство, которое показывает
@@ -132,17 +152,17 @@ public class Main {
 */
         System.out.println("Задание 5.");
 
-        int min6 = 0;
-        int max6 = 28800;
+        int min = 0;
+        int max = 28800;
 
-        int randSec6 = (int)(Math.random()*(max6-min6+1)+min6);
+        int randSec = (int)(Math.random()*(max-min+1)+min);
 
-        int secLeft6 = max6 - randSec6;
+        int secLeft = max - randSec;
 
-        float hoursLeft6 = secLeft6/3600f;
+        float hoursLeft = secLeft/3600f;
 
-        System.out.println("Секунд осталось: " + secLeft6);
-        System.out.println("Часов осталось: " + hoursLeft6);
+        System.out.println("Секунд осталось: " + secLeft);
+        System.out.println("Часов осталось: " + hoursLeft);
 
 
     }
